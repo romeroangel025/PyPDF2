@@ -8,7 +8,7 @@ def main(ruta_entrada, ruta_salida):
     lector_pdf.abrir()
     num_paginas = lector_pdf.obtener_numero_paginas()
     print(f"Número de páginas: {num_paginas}")
-    texto = lector_pdf.extraer_texto(0)
+    texto = lector_pdf.extraer_texto(0)# aca se elije que pagina queres obtener 
     print(f"Texto de la primera página: {texto}")
 
     # Escribir PDF
