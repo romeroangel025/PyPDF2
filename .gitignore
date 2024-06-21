@@ -1,0 +1,7 @@
+# Ignorar el directorio del entorno virtual
+.venv/
+
+# Ignorar los directorios de caché de Python
+__pycache__/
+
+# Puedes agregar más reglas aquí si es necesario
