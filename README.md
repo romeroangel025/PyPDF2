@@ -1,4 +1,4 @@
-# PyPDF2 Application
+# PyPDF2 Application Grupo 20 Comisión 1 
 
 ## Descripción
 
