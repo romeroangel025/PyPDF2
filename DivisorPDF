@@ -1,1 +1,20 @@
+import sys
+import PyPDF2
 
+def split_pdf(pdf_path, output_folder):
+    with open(pdf_path, 'rb') as file:
+        reader = PyPDF2.PdfFileReader(file)
+        for page_num in range(reader.numPages):
+            pdf_writer = PyPDF2.PdfFileWriter()
+            pdf_writer.add_page(reader.getPage(page_num))
+            output_path = f"{output_folder}/page_{page_num + 1}.pdf"
+            with open(output_path, 'wb') as out:
+                pdf_writer.write(out)
+
+if name == "main":
+    if len(sys.argv) != 3:
+        print("Usage: python split_pdf.py <pdf_path> <output_folder>")
+        sys.exit(1)
+    pdf_path = sys.argv[1]
+    output_folder = sys.argv[2]
+    split_pdf(pdf_path, output_folder)
