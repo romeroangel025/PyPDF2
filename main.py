@@ -65,6 +65,5 @@ def main():
             return
         dividir_pdf(args.entradas[0], args.salida)
 
-if name == "_main_":
+if _name_ == "_main_":
     main()
-
