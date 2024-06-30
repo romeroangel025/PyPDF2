@@ -26,7 +26,8 @@ pip install pypdf2
 #### Para probar el proyecto una vez clonado e instalado todo lo necesario escribir por consola:
 - python main.py extraer_texto ejemplo.pdf salida_texto.txt
 - python main.py unir_pdfs ejemplo.pdf salida.pdf salida_unido.pdf
-- python main.py dividir_pdf salida.pdf
+- python main.py dividir_pdf salida_unido.pdf dummy
+
 
 
 
