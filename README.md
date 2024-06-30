@@ -11,6 +11,10 @@ PyPDF2 es una biblioteca pura de Python que permite realizar operaciones comunes
 - Fusionar múltiples archivos PDF en uno solo.
 - Manipular páginas de PDFs (rotar, recortar, etc.).
 
+  ### Diagrama UML de clases
+![Diagrama UML](imagenes/diagramaUML.png)
+
+
 ### Instalación
 
 Para instalar PyPDF2, usa el siguiente comando:
@@ -18,7 +22,5 @@ Para instalar PyPDF2, usa el siguiente comando:
 ```bash
 pip install pypdf2
 
-### Diagrama UML de clases
-![Diagrama UML](imagenes/diagramaUML.png)
 
 
