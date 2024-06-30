@@ -1,7 +1,7 @@
-import argparse
 from LectorPDF import LectorPDF
 from EscritorPDF import EscritorPDF
 from DivisorPDF import DivisorPDF
+import argparse
 
 def extraer_texto(ruta_entrada, ruta_salida):
     lector_pdf = LectorPDF(ruta_entrada)
@@ -18,7 +18,7 @@ def extraer_texto(ruta_entrada, ruta_salida):
     with open(ruta_salida, "w", encoding="utf-8") as archivo_texto:
         archivo_texto.write(texto_completo)
 
-    lector_pdf.cerrar()
+    lector_pdf.cerrar()  # Llamar al método cerrar() al finalizar
 
 def unir_pdfs(rutas_entrada, ruta_salida):
     escritor_pdf = EscritorPDF(ruta_salida)
@@ -36,15 +36,14 @@ def unir_pdfs(rutas_entrada, ruta_salida):
             if pagina:
                 escritor_pdf.agregar_pagina(pagina)
         
-        lector_pdf.cerrar()
+        lector_pdf.cerrar()  # Cerrar el lector después de procesar el archivo
     
-    escritor_pdf.guardar()
+    escritor_pdf.guardar(ruta_salida)  # Llama a guardar con la ruta_salida
     print(f"Archivo PDF unido guardado como {ruta_salida}")
 
-def dividir_pdf(ruta_entrada, ruta_salida):
+def dividir_pdf(ruta_entrada):
     divisor_pdf = DivisorPDF(ruta_entrada)
-    divisor_pdf.dividir(ruta_salida)
-
+    divisor_pdf.dividir_pagina_por_pagina()
 def main():
     parser = argparse.ArgumentParser(description="Procesar archivos PDF.")
     parser.add_argument("accion", choices=["extraer_texto", "unir_pdfs", "dividir_pdf"], help="Acción a realizar: extraer_texto, unir_pdfs o dividir_pdf.")
@@ -63,7 +62,8 @@ def main():
         if len(args.entradas) != 1:
             print("Para dividir un PDF, proporciona una sola ruta de entrada.")
             return
-        dividir_pdf(args.entradas[0], args.salida)
+        dividir_pdf(args.entradas[0])
 
 if __name__ == "__main__":
     main()
+

@@ -23,3 +23,9 @@ class DocumentoPDF:
             return self.lector.pages[numero_pagina]
         else:
             return None
+        
+    def cerrar(self):
+        if self.lector:
+            self.lector.stream.close()
+            print(f"Archivo PDF cerrado: {self.ruta_archivo}")
+    
