@@ -19,5 +19,6 @@ Para instalar PyPDF2, usa el siguiente comando:
 pip install pypdf2
 
 ### Diagrama UML de clases
-![Descripción de la imagen](/diagramaUML.png)
+![Diagrama UML](imagenes/diagramaUML.png)
+
 
